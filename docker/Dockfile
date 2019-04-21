@@ -1,0 +1,13 @@
+FROM openjdk:8-jre-alpine
+
+MAINTAINER lkh <lukehua@sungrowpower.com>
+
+ENV VERSION 0.0.1-SNAPSHOT
+
+ENV JAVA_OPTS ""
+
+COPY ../target/apollotest-${VERSION}.jar /app.jar
+
+EXPOSE 8390
+
+CMD ["java","jar"," $JAVA_OPTS -jar /app.jar"]
